@@ -1,0 +1,86 @@
+body{
+    background-color: darkslategray;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    font-size: 36px; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Use a modern font-family */
+    text-transform: uppercase; /* Optional: Transform text to uppercase */
+    text-align: center; /* Optional: Center-align the text */
+    letter-spacing: 2px; /* Optional: Add letter spacing for a modern look */
+    /* Additional styles can be added here */
+    margin-top: 15%;
+  }
+
+h2 {
+    font-size: 28px; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Use a modern font-family */
+    text-transform: uppercase; /* Optional: Transform text to uppercase */
+    text-align: center; /* Optional: Center-align the text */
+    letter-spacing: 2px; /* Optional: Add letter spacing for a modern look */
+    /* Additional styles can be added here */
+    margin-top: 4%;
+  }
+a {
+    text-decoration: none;
+    color:#fff
+  }
+
+.navbar {
+    background-color: darkslategray;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo span {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Adjust the font weight as needed */
+    color: white;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #333;
+        top: 60px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

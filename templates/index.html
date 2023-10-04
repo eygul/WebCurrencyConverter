@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Dollar to Turkish Lira</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span><a href="{{url_for('get_tl')}}">DollarToLira</a></span>
+        </div>
+        <div class="menu-icon">
+            <i id="menu-toggle" class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>
+        1 USD:
+    </h1>
+    <h2>
+        {{tl}} Turkish Lira
+    </h2>
+</body>
+</html>
