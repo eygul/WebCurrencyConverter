@@ -1,18 +1,23 @@
 body{
     background-color: darkslategray;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure the body covers the entire viewport height */
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
 }
 h1 {
-    font-size: 36px; /* Adjust the font size as needed */
+    font-size: 36px;
     font-weight: bold;
     color: white;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Use a modern font-family */
-    text-transform: uppercase; /* Optional: Transform text to uppercase */
-    text-align: center; /* Optional: Center-align the text */
-    letter-spacing: 2px; /* Optional: Add letter spacing for a modern look */
-    /* Additional styles can be added here */
-    margin-top: 15%;
-  }
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 10%; /* Adjust margin-top for spacing */
+    margin-bottom: 2%; /* Adjust margin-bottom for spacing */
+}
 
 h2 {
     font-size: 28px; /* Adjust the font size as needed */
@@ -24,6 +29,16 @@ h2 {
     letter-spacing: 2px; /* Optional: Add letter spacing for a modern look */
     /* Additional styles can be added here */
     margin-top: 4%;
+  }
+  h3 {
+    font-size: 28px; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Use a modern font-family */
+    text-transform: uppercase; /* Optional: Transform text to uppercase */
+    text-align: center; /* Optional: Center-align the text */
+    letter-spacing: 2px; /* Optional: Add letter spacing for a modern look */
+    /* Additional styles can be added here */
   }
 a {
     text-decoration: none;
@@ -66,21 +81,104 @@ a {
 
 @media screen and (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: flex;
         flex-direction: column;
         position: absolute;
-        background-color: #333;
+        background-color: #997676;
+        color:#fff;
         top: 60px;
         left: 0;
         right: 0;
         text-align: center;
+        z-index: 1; /* Ensure the menu appears above other content */
+        list-style-type: none;
+        max-height: 0; /* Initially, hide the nav-links */
+        overflow: hidden; /* Hide any overflow content */
+        transition: max-height 0.3s ease-in-out; /* Add a smooth transition effect */
     }
 
     .nav-links.active {
         display: flex;
+        max-height: 300px;
     }
-
+    
+    .nav-links a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .nav-links.active a{
+        display: flex;
+        color: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Use a modern font-family */
+        text-transform: uppercase; /* Optional: Transform text to uppercase */
+        text-align: center; /* Optional: Center-align the text */
+        letter-spacing: 2px;
+        margin-left: 37%;
+        margin-top: 2%;
+    }
     .menu-icon {
         display: block;
     }
+
+}
+footer {
+    background-color: #997676;
+    padding: 0.5px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+main {
+    flex-grow: 1; /* Allow the main content area to grow to fill the remaining space */
+}
+
+#menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+}
+
+.insert{
+    padding: 18px;
+     font-size: 15px;
+     border-width: 4px;
+     border-color: #997676;
+     background-color: darkslategray;
+     color: #fff;
+     border-style: solid;
+     border-radius: 50px;
+     box-shadow: -1px 5px 11px rgba(66,66,66,.75);
+     text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+}
+
+.myButton {
+	background-color:darkslategray;
+	border-radius:28px;
+	border:2px solid #997676;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:13px 11px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#997676;
+    text-shadow: 10% #e5dddd;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.nav-links a:hover{
+    color:#997676;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5);
 }

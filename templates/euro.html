@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Dollar to Euro</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span><a href="{{url_for('home')}}">DollarToLira</a></span>
+        </div>
+        <div class="menu-icon">
+            <button id="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('get_tl')}}">Turkish Lira</a></li>
+            <li><a href="{{url_for('get_eur')}}">Euro</a></li>
+            <li><a href="{{url_for('get_gbp')}}">British Pound</a></li>
+        </ul>
+    </nav>
+    <h1>
+        <form method="post" action="euro" enctype="multipart/form-data"> 
+            {{ form.csrf_token }} 
+            <p>{{ form.price(class_="insert") }} USD</p> 
+            <p>{{ form.submit(class_="myButton") }}</p>
+        </form>
+    </h1>
+    <h2>
+        {{eur}} Euro
+    </h2>
+    <footer>
+        <p>&copy; 2023 DollarToLira</p>
+    </footer>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>
