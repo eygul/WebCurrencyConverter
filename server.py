@@ -8,14 +8,14 @@ from flask_wtf.csrf import CSRFProtect
 
 
 app = Flask(__name__, instance_relative_config=False)
-app.config['SECRET_KEY'] = "19e094b99cc741c80b3258ae86bea51f"
+app.config['SECRET_KEY'] = "your secret key"
 
 class ContactForm(FlaskForm):
     price = FloatField("Price", validators=[InputRequired()],render_kw={"placeholder": "1"})
     submit = SubmitField("Submit")
 
 def get_turkishlira():
-    url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_QUv4jHtgokP22VThdSjaB50OcdOCfVRbCR08zvU0&currencies=TRY"
+    url = "your API endpoint"
     resp = requests.get(url)
     if resp.status_code == 200:
         cur = resp.json()
@@ -28,7 +28,7 @@ def get_turkishlira():
         return notfound
 
 def get_britishpound():
-    url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_QUv4jHtgokP22VThdSjaB50OcdOCfVRbCR08zvU0&currencies=GBP"
+    url = "your API endpoint"
     resp = requests.get(url)
     if resp.status_code == 200:
         cur = resp.json()
@@ -41,7 +41,7 @@ def get_britishpound():
         return notfound
 
 def get_euro():
-    url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_QUv4jHtgokP22VThdSjaB50OcdOCfVRbCR08zvU0&currencies=EUR"
+    url = "your API endpoint"
     resp = requests.get(url)
     if resp.status_code == 200:
         cur = resp.json()
@@ -49,7 +49,7 @@ def get_euro():
         print(val)
         return val
     else:
-        notfound = "This website is not currently functioning due to the exceeded limit in API."
+        notfound = "your API endpoint"
         print(notfound)
         return notfound
 
